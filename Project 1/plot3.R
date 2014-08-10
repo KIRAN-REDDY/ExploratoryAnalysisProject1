@@ -1,0 +1,7 @@
+powerData <- readRDS("powerData.rds")
+plot(powerData$Date_time, powerData$Sub_metering_1, col = "darkgrey", type = "l", xlab = "", ylab = "Energy sub metering")
+lines(powerData$Date_time, powerData$Sub_metering_2, col = "red")
+lines(powerData$Date_time, powerData$Sub_metering_3, col = "blue")
+legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty="l",col=c("black","red","blue"),lwd=2,cex=0.7)
+dev.copy(png, file = "plot3.png", width = 480, height = 480)
+dev.off()
